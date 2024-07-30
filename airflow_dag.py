@@ -4,7 +4,6 @@ from datetime import datetime, timedelta
 import os
 import sys
 
-# Add your script directory to the path
 sys.path.append('api_ingestion.py')
 
 from api_ingestion import run_ingestion
@@ -22,7 +21,7 @@ dag = DAG(
     'api_ingestion_dag',
     default_args=default_args,
     description='A simple DAG to ingest data from an API',
-    schedule_interval='@daily',  # Adjust the schedule as needed
+    schedule_interval='@daily',  
     start_date=datetime(2024, 1, 1),
     catchup=False,
 )
